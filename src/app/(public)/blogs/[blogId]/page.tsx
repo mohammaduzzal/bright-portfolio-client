@@ -14,16 +14,16 @@ export const generateStaticParams = async() =>{
 }
 
 
-
+export const revalidate = 30;
 export const generateMetadata = async({params} : {params : Promise<{blogId : string}>}) =>{
   const {blogId} = await params
 
    const blog = await getBlogById(blogId)
 
-    return{
-      title : blog?.title ,
-      description : blog?.content
-    }
+    return {
+    title: blog?.title || "Blog Details",
+    description: blog?.content?.slice(0, 150) || "Read the full article on Bright’s blog.",
+  };
 }
 
 export default async function BlogDetailsPage({params} : {params : Promise<{blogId : string}>}) {

@@ -12,7 +12,9 @@ export const metadata : Metadata = {
 export default async function ProjectsPage() {
 
     const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_API}/project`,{
-        cache : "no-store"
+        next :{
+          revalidate : 10
+        }
     })
     
 

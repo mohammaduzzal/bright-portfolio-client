@@ -5,7 +5,7 @@ import bright from "../../../../public/b.jpg";
 
 export default function Hero() {
   return (
-    <div className="relative flex flex-col-reverse md:flex-row items-center justify-center 
+    <div className="relative flex mt-25 md:mt-0 flex-col-reverse md:flex-row items-center justify-center 
                 min-h-[500px] w-11/12 mx-auto bg-white text-gray-900 border-b my-5 gap-8 md:gap-16 lg:gap-20">
 
       {/* Content Section */}
@@ -39,9 +39,9 @@ export default function Hero() {
       </div>
 
       {/* Image */}
-      <div className="w-36 h-36 sm:mt-20 sm:w-48 sm:h-48 md:w-60 md:h-60 lg:w-72 lg:h-72 
-                 rounded-full overflow-hidden shadow-xl border-4 border-white flex-shrink-0">
-        <Image src={bright} alt="banner pic" className="w-full h-full object-cover" />
+      <div className="sm:mt-20 sm:w-30 sm:h-30 md:w-60 md:h-60 lg:w-72 lg:h-72 
+                rounded-full md:rounded-4xl overflow-hidden border-4 border-white flex-shrink-0">
+        <Image src={bright} alt="banner pic" height={200} width={200} className="rounded-full md:rounded-xl shadow-md object-cover" />
       </div>
     </div>
   );

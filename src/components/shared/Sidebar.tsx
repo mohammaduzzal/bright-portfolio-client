@@ -1,0 +1,70 @@
+"use client";
+
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Home, PlusCircle, LogOut } from "lucide-react";
+import { signOut, useSession } from "next-auth/react";
+
+
+export default function Sidebar() {
+  const session = useSession()
+  console.log(session)
+ 
+
+  return (
+    <aside className="flex md:min-h-dvh md:w-64 md:flex-col border-r bg-black text-white">
+      {/* Top navigation */}
+      <nav className="flex-1 space-y-2 p-4">
+        <Link
+          href="/"
+          className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium hover:bg-gray-100 hover:text-black"
+        >
+          <Home className="h-4 w-4" />
+          Home
+        </Link>
+
+        <Link
+          href="/dashboard/create-blog"
+          className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium hover:bg-gray-100 hover:text-black"
+        >
+          <PlusCircle className="h-4 w-4" />
+          Create Blog
+        </Link>
+        <Link
+          href="/dashboard/create-project"
+          className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium hover:bg-gray-100 hover:text-black"
+        >
+          <PlusCircle className="h-4 w-4" />
+          Create Project
+        </Link>
+        <div className="border-b-2"></div>
+         <Link
+          href="/dashboard/manage-project"
+          className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium hover:bg-gray-100 hover:text-black"
+        >
+          <PlusCircle className="h-4 w-4" />
+          Manage Project
+        </Link>
+         <Link
+          href="/dashboard/manage-blog"
+          className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium hover:bg-gray-100 hover:text-black"
+        >
+          <PlusCircle className="h-4 w-4" />
+          Manage Blog
+        </Link>
+      </nav>
+
+      {/* Bottom action */}
+      <div className="p-4 border-t border-gray-500">
+         {session?.status === "authenticated" && <Button
+          variant="destructive"
+          className="w-full justify-start gap-2 cursor-pointer"
+          onClick={()=> signOut()}
+        >
+          <LogOut className="h-4 w-4"/>
+          Logout
+        </Button>}
+      </div>
+    </aside>
+  );
+}

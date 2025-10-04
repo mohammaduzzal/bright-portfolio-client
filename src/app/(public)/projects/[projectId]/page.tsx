@@ -1,6 +1,4 @@
-import BlogDetailsCard from "@/components/modules/Blog/BlogDetailsCard"
 import ProjectDetailsCard from "@/components/modules/Project/ProjectDetailsCard"
-import { getBlogById } from "@/services/blogService"
 import { getProjectById } from "@/services/projectService"
 import { IProject } from "@/types"
 
@@ -15,17 +13,17 @@ export const generateStaticParams = async() =>{
 
 }
 
-
+export const revalidate = 30;
 
 export const generateMetadata = async({params} : {params : Promise<{projectId : string}>}) =>{
   const {projectId} = await params
 
-   const project = await getBlogById(projectId)
+   const project = await getProjectById(projectId)
 
-    return{
-      title : project?.name ,
-      description : project?.description
-    }
+   return {
+    title: project?.name || "Project Details",
+    description: project?.description?.slice(0, 150) || "See the full overview of Bright’s project.",
+  };
 }
 
 export default async function ProjectDetailsPage({params} : {params : Promise<{projectId : string}>}) {
