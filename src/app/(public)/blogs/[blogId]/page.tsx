@@ -1,12 +1,13 @@
 import BlogDetailsCard from "@/components/modules/Blog/BlogDetailsCard"
-import { getBlogById } from "@/services/blogService.ts"
+import { getBlogById } from "@/services/blogService"
+import { IBlog } from "@/types"
 
 
 export const generateStaticParams = async() =>{
   const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_API}/blog`)
     const {data : blogs} = await res.json()
 
-    return blogs.slice(0,2).map((blog : any) =>({
+    return blogs.slice(0,2).map((blog : IBlog) =>({
       blogId : String(blog.id)
     }))
 
@@ -20,7 +21,7 @@ export const generateMetadata = async({params} : {params : Promise<{blogId : str
    const blog = await getBlogById(blogId)
 
     return{
-      title : blog?.title,
+      title : blog?.title ,
       description : blog?.content
     }
 }

@@ -9,3 +9,18 @@ export interface IBlog {
   createdAt: string
   updatedAt: string
 }
+
+
+export interface IProject {
+  id: number
+  name: string
+  image: string
+  description: string
+  techStack: string[]
+  liveLink: string
+  githubLink: string[]
+  challenges: string
+  futureImprovements: string
+  createdAt: string
+  updatedAt: string
+}

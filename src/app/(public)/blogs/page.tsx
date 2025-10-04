@@ -22,7 +22,7 @@ export default async function BlogsPage() {
     return (
           <div className="py-30 px-4 max-w-7xl mx-auto">
       <h2 className="text-center text-4xl">All Blogs</h2>
-       <div className="grid grid-cols-3 gap-5 max-w-6xl mx-auto my-5">
+       <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-6xl mx-auto my-5">
               {
                 blogs.map((blog : IBlog) => <BlogCard key={blog.id} blog={blog}/>)
               }
