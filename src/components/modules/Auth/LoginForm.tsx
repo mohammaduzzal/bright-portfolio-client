@@ -13,9 +13,9 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import { signIn } from "next-auth/react";
+import {  signIn } from "next-auth/react";
 import { toast } from "sonner";
-import { useRouter } from "next/navigation";
+
 
 const loginSchema = z.object({
   email: z.email("Invalid email address"),
@@ -30,7 +30,7 @@ type LoginValues = z.infer<typeof loginSchema>;
 
 export default function LoginForm() {
 
-  const router = useRouter()
+  
 
   const form = useForm<LoginValues>({
     resolver: zodResolver(loginSchema),
@@ -43,7 +43,8 @@ export default function LoginForm() {
   const onSubmit = async (values: LoginValues) => {
     try {
      const res = await signIn("credentials", {
-        redirect: false, 
+        redirect: true, 
+        callbackUrl: "/dashboard",
         ...values,
       })
 
@@ -51,7 +52,7 @@ export default function LoginForm() {
         toast.error("Invalid email or password");
       } else {
         toast.success("Login successful!");
-        router.push("/dashboard");
+         
       }
 
     } catch (err) {

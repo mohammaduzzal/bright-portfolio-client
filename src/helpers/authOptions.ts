@@ -48,31 +48,42 @@ export const authOptions: NextAuthOptions = {
               }),
             }
           );
-          console.log("Response From Backend:", res);
-          if (!res?.ok) {
-            console.error("Login Failed", await res.text());
+          
+          // if (!res?.ok) {
+          //   console.error("Login Failed", await res.text());
+          //   return null;
+          // }
+          if (!res.ok) {
+            const errorMessage = await res.text();
+            console.error("Login failed:", errorMessage);
+            return null; 
+          }
+
+          const { data: user } = await res.json();
+
+          if (!user?.id) {
+            console.error("User not found");
             return null;
           }
 
-          const responseData = await res.json();
-          const user = responseData.data;
-          if (user?.id) {
-            return {
-              id: user?.id,
-              name: user?.name,
-              email: user?.email,
-              image : user?.image
-            };
-          } else {
-            return null;
-          }
+          return {
+            id: user.id,
+            name: user.name,
+            email: user.email,
+            image: user.image || null,
+          };
+          
         } catch (err) {
-          console.error(err);
+          console.error("Authorize Error:", err);
           return null;
         }
       },
     }),
   ],
+  session: {
+    strategy: "jwt",
+  },
+
   callbacks:{
     async jwt({token,user}) {
       if(user){
@@ -88,8 +99,10 @@ export const authOptions: NextAuthOptions = {
       return session
     }
   },
-  secret: process.env.AUTH_SECRET,
+  
   pages: {
-    signIn: "/login"
-  }
+    signIn: "/login",
+    error: "/login"
+  },
+  secret: process.env.NEXTAUTH_SECRET,
 }
