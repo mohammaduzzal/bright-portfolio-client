@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { IBlog } from "@/types";
 import Image from "next/image";
 

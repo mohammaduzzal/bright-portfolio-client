@@ -5,6 +5,12 @@ This project highlights modern **frontend + backend integration**, secure **JWT 
 
 
 ---
+##  Live Links
+
+- **Live Deployment:** [Bright-Portfolio-Client]()
+  
+  
+- **Live Deployment:** [Bright-Portfolio-Server](https://bright-portfolio-server.vercel.app/)
 
 ##  Tech Stack
 

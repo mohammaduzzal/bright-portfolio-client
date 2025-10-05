@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { IProject } from "@/types";
 import Image from "next/image";
 import Link from "next/link";

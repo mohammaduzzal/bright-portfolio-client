@@ -1,4 +1,3 @@
-import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import {  FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import bright from "../../../../public/b.jpg";
@@ -20,7 +19,7 @@ export default function Hero() {
 
         {/* Text */}
         <div className="ml-0 md:ml-12 max-w-xl">
-          <p className="text-sm uppercase tracking-widest text-blue-500">Hello, I'm</p>
+          <p className="text-sm uppercase tracking-widest text-blue-500">Hello, I&apos;m</p>
           <h1 className="text-2xl md:text-5xl mt-2 font-bold leading-tight">
             <span className="block">Mohammad Uzzal</span>
             <span className="block text-xl mb-3 font-light text-gray-700">A Full Stack Web Developer</span>

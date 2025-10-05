@@ -1,6 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import { Briefcase, GraduationCap } from "lucide-react";
+import { GraduationCap } from "lucide-react";
 import { Metadata } from "next";
 
 

@@ -5,7 +5,7 @@ import { useState } from 'react';
 
 function CreateBlogForm() {
   const [isFeatured, setIsFeatured] = useState("false");
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitting] = useState(false);
     
     return (
          <Form

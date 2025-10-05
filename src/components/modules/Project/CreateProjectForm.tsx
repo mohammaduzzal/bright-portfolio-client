@@ -6,7 +6,7 @@ import { useState } from 'react';
 
 
 export default function CreateProjectForm() {
-      const [isSubmitting, setIsSubmitting] = useState(false);
+      const [isSubmitting] = useState(false);
 
     return (
          <Form
