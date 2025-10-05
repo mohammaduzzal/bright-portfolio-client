@@ -13,7 +13,8 @@ export default async function BlogsPage() {
 
     const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_API}/blog`,{
         next :{
-          revalidate : 10
+          revalidate : 10,
+          tags :["BLOG"]
         }
     })
     

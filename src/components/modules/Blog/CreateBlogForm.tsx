@@ -24,6 +24,7 @@ function CreateBlogForm() {
           id="title"
           name="title"
           className="w-full rounded-md border px-3 py-2 focus:ring focus:ring-blue-200"
+          required
         />
       </div>
 
@@ -37,6 +38,7 @@ function CreateBlogForm() {
           name="content"
           rows={4}
           className="w-full rounded-md border px-3 py-2 focus:ring focus:ring-blue-200"
+          required
         />
       </div>
 
@@ -50,6 +52,7 @@ function CreateBlogForm() {
           id="thumbnail"
           name="thumbnail"
           className="w-full rounded-md border px-3 py-2 focus:ring focus:ring-blue-200"
+          required
         />
       </div>
 
@@ -64,6 +67,7 @@ function CreateBlogForm() {
           name="tags"
           placeholder="Next.js, React, Web Development"
           className="w-full rounded-md border px-3 py-2 focus:ring focus:ring-blue-200"
+          required
         />
       </div>
 

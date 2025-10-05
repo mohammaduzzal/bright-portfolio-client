@@ -25,6 +25,7 @@ export default function CreateProjectForm() {
           id="name"
           name="name"
           className="w-full rounded-md border px-3 py-2 focus:ring focus:ring-blue-200"
+          required
         />
       </div>
 
@@ -38,6 +39,7 @@ export default function CreateProjectForm() {
           name="description"
           rows={4}
           className="w-full rounded-md border px-3 py-2 focus:ring focus:ring-blue-200"
+          required
         />
       </div>
 
@@ -51,6 +53,7 @@ export default function CreateProjectForm() {
           id="image"
           name="image"
           className="w-full rounded-md border px-3 py-2 focus:ring focus:ring-blue-200"
+          required
         />
       </div>
 
@@ -65,6 +68,7 @@ export default function CreateProjectForm() {
           name="techStack"
           placeholder="Next.js, React, Web Development"
           className="w-full rounded-md border px-3 py-2 focus:ring focus:ring-blue-200"
+          required
         />
       </div>
       {/* github link */}
@@ -77,6 +81,7 @@ export default function CreateProjectForm() {
           id="githubLink"
           name="githubLink"
           className="w-full rounded-md border px-3 py-2 focus:ring focus:ring-blue-200"
+          required
         />
       </div>
        {/* liveLink */}
@@ -89,6 +94,7 @@ export default function CreateProjectForm() {
           id="liveLink"
           name="liveLink"
           className="w-full rounded-md border px-3 py-2 focus:ring focus:ring-blue-200"
+          required
         />
       </div>
        {/* challenges */}
@@ -101,6 +107,7 @@ export default function CreateProjectForm() {
           id="challenges"
           name="challenges"
           className="w-full rounded-md border px-3 py-2 focus:ring focus:ring-blue-200"
+          required
         />
       </div>
        {/* futureImprovements */}
@@ -113,6 +120,7 @@ export default function CreateProjectForm() {
           id="futureImprovements"
           name="futureImprovements"
           className="w-full rounded-md border px-3 py-2 focus:ring focus:ring-blue-200"
+          required
         />
       </div>
 
